@@ -39,12 +39,10 @@
 - [x] **Milestone 2.1: 指令路由器**
     - [x] Task: 重构主循环以支持 `/command` 指令解析。
     - [x] Task: 创建抽象 `Tool` 接口类。
-- [ ] **Milestone 2.2: 代码审计官 (Git)**
-    - [ ] Task: 实现 `get_git_diff()` 工具函数。
-    - [ ] Task: 创建 `/review` 指令 (将 diff 喂给 Aria 进行毒舌点评)。
-- [ ] **Milestone 2.3: 技术雷达 (Web)**
-    - [ ] Task: 实现 Hacker News/GitHub Trending 的基础抓取器。
-    - [ ] Task: 创建 `/news` 指令用于生成每日简报。
+- [ ] **Milestone 2.2: 记忆持久化**
+    - [ ] Task: 实现 `save_history()` 和 `load_history()` (JSON/DB)。
+    - [ ] Task: 实现上下文窗口管理 (保留最近 N 轮)。
+    - [ ] **Challenge:** 实现系统重启后的意识连续性。
 
 ### Phase 3: 赛博共生 (Autonomy)
 *赋予 Aria 记忆、主动性与视觉能力。*
@@ -55,10 +53,6 @@
 - [ ] **Milestone 3.2: 视觉皮层**
     - [ ] Task: 集成视觉模型 (如 Qwen-VL)。
     - [ ] Task: 创建 `/look` 指令以分析屏幕内容。
-- [ ] **Milestone 3.3: 记忆持久化**
-    - [ ] Task: 实现 `save_history()` 和 `load_history()` (JSON/DB)。
-    - [ ] Task: 实现上下文窗口管理 (保留最近 N 轮)。
-    - [ ] **Challenge:** 实现系统重启后的意识连续性。
 
 ---
 
@@ -82,7 +76,7 @@ Aria 的 LoRA 权重已托管至 Hugging Face。该权重基于 Qwen2.5-3B-Instr
 | 模型版本               | 底座模型                                                     | LoRA                                                         |
 | :--------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | **Aria-v3.2 (稳定版)** | [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct) | [zephyr-zw666/AIGF-Aria-v3.2-LoRA](https://huggingface.co/zephyr-zw666/AIGF-Aria-v3.2-LoRA) |
-| **Aria-v4.1 (稳定版)** | [zephyr-zw666/Qwen2.5-7B-4bit](https://huggingface.co/zephyr-zw666/Qwen2.5-7B-4bit) | [zephyr-zw666/AIGF-Aria-v4.0-LoRA](https://huggingface.co/zephyr-zw666/AIGF-Aria-v4.0-LoRA) |
+| **Aria-v4.0 (稳定版)** | [zephyr-zw666/Qwen2.5-7B-4bit](https://huggingface.co/zephyr-zw666/Qwen2.5-7B-4bit) | [zephyr-zw666/AIGF-Aria-v4.0-LoRA](https://huggingface.co/zephyr-zw666/AIGF-Aria-v4.0-LoRA) |
 
 ---
 

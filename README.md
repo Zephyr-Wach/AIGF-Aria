@@ -39,12 +39,10 @@
 - [x] **Milestone 2.1: Command Router**
     - [x] Task: Refactor Main Loop to support `/command` parsing.
     - [x] Task: Create abstract `Tool` interface class.
-- [ ] **Milestone 2.2: The Code Auditor (Git)**
-    - [ ] Task: Implement `get_git_diff()` function.
-    - [ ] Task: Create `/review` command (Feed diff to Aria for a "roast").
-- [ ] **Milestone 2.3: Tech Radar (Web)**
-    - [ ] Task: Implement basic fetcher for Hacker News/GitHub Trending.
-    - [ ] Task: Create `/news` command for daily briefings.
+- [ ] **Milestone 2.2: Memory Persistence**
+    - [ ] Task: Implement `save_history()` and `load_history()` (JSON/DB).
+    - [ ] Task: Implement Context Window management (Last-N turns).
+    - [ ] **Challenge:** Ensure continuity of consciousness across system restarts.
 
 ### Phase 3: Cyber Symbiosis (Autonomy)
 *Granting Aria memory, agency, and vision.*
@@ -55,10 +53,6 @@
 - [ ] **Milestone 3.2: Visual Cortex**
     - [ ] Task: Integrate Vision Model (e.g., Qwen-VL).
     - [ ] Task: Create `/look` command to analyze screen content.
-- [ ] **Milestone 3.3: Memory Persistence**
-    - [ ] Task: Implement `save_history()` and `load_history()` (JSON/DB).
-    - [ ] Task: Implement Context Window management (Last-N turns).
-    - [ ] **Challenge:** Ensure continuity of consciousness across system restarts.
 
 ---
 
