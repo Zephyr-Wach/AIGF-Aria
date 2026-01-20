@@ -36,9 +36,9 @@
 ### Phase 2: 感官延伸 (The Tools)
 *将 Aria 连接至本地文件系统与工作流。*
 
-- [ ] **Milestone 2.1: 指令路由器**
-    - [ ] Task: 重构主循环以支持 `/command` 指令解析。
-    - [ ] Task: 创建抽象 `Tool` 接口类。
+- [x] **Milestone 2.1: 指令路由器**
+    - [x] Task: 重构主循环以支持 `/command` 指令解析。
+    - [x] Task: 创建抽象 `Tool` 接口类。
 - [ ] **Milestone 2.2: 代码审计官 (Git)**
     - [ ] Task: 实现 `get_git_diff()` 工具函数。
     - [ ] Task: 创建 `/review` 指令 (将 diff 喂给 Aria 进行毒舌点评)。
@@ -64,13 +64,14 @@
 
 ## 📈 版本迭代记录 (Changelog)
 
-| 版本     | 核心困境                           | 解决方案与改进                       | 状态         |
-| :------- | :--------------------------------- | :----------------------------------- | :----------- |
-| **v1.0** | 复读机效应，对话无逻辑             | 建立 JSONL 结构化数据处理流程        | ❌ 废弃       |
-| **v2.0** | 剧情炸弹: 频繁提到撞车/考试等琐事  | 引入 `device_map` 适配，尝试初步清洗 | ⚠️ 停用       |
-| **v3.1** | 过度洗脑: 5 Epoch 导致模型丧失逻辑 | 降低训练强度，反思 Rank 权重         | ⚠️ 停用       |
-| **v3.2** | 神志清醒: 语感与逻辑的平衡点       | **物理黑名单过滤 + 极低 Rank (8)**   | ✅ **Stable** |
-| **v4.0** | v3.2基础上从3B提升到7/8B           | 量化 7B 模型便于 MacBook Air 使用    | ✅ **Stable** |
+| 版本     | 核心困境                           | 解决方案与改进                                               | 状态         |
+| :------- | :--------------------------------- | :----------------------------------------------------------- | :----------- |
+| **v1.0** | 复读机效应，对话无逻辑             | 建立 JSONL 结构化数据处理流程                                | ❌ 废弃       |
+| **v2.0** | 剧情炸弹: 频繁提到撞车/考试等琐事  | 引入 `device_map` 适配，尝试初步清洗                         | ⚠️ 停用       |
+| **v3.1** | 过度洗脑: 5 Epoch 导致模型丧失逻辑 | 降低训练强度，反思 Rank 权重                                 | ⚠️ 停用       |
+| **v3.2** | 神志清醒: 语感与逻辑的平衡点       | **物理黑名单过滤 + 极低 Rank (8)**                           | ✅ **Stable** |
+| **v4.1** | v3.2基础上从3B提升到7/8B           | 量化 7B 模型便于 MacBook Air 使用                            | ✅ **Stable** |
+| **v4.2** | aria理解用户输入语句执行指令       | **语义路由 (Semantic Router)** + **JIT 动态注入** + **ReAct 回旋镖架构** | ✅ **Stable** |
 
 ---
 
@@ -81,7 +82,7 @@ Aria 的 LoRA 权重已托管至 Hugging Face。该权重基于 Qwen2.5-3B-Instr
 | 模型版本               | 底座模型                                                     | LoRA                                                         |
 | :--------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | **Aria-v3.2 (稳定版)** | [Qwen2.5-3B-Instruct](https://huggingface.co/Qwen/Qwen2.5-3B-Instruct) | [zephyr-zw666/AIGF-Aria-v3.2-LoRA](https://huggingface.co/zephyr-zw666/AIGF-Aria-v3.2-LoRA) |
-| **Aria-v4.0 (稳定版)** | [zephyr-zw666/Qwen2.5-7B-4bit](https://huggingface.co/zephyr-zw666/Qwen2.5-7B-4bit) | [zephyr-zw666/AIGF-Aria-v4.0-LoRA](https://huggingface.co/zephyr-zw666/AIGF-Aria-v4.0-LoRA) |
+| **Aria-v4.1 (稳定版)** | [zephyr-zw666/Qwen2.5-7B-4bit](https://huggingface.co/zephyr-zw666/Qwen2.5-7B-4bit) | [zephyr-zw666/AIGF-Aria-v4.0-LoRA](https://huggingface.co/zephyr-zw666/AIGF-Aria-v4.0-LoRA) |
 
 ---
 
