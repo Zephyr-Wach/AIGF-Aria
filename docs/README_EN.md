@@ -34,20 +34,18 @@
     - [x] Task: Define basic System Prompt structure.
 
 ### Phase 2: Sensory Extension (The Tools)
-*Connecting Aria to the local filesystem and workflow.*
+*Connecting Aria to the local filesystem and workflow, and memory.*
 
-- [ ] **Milestone 2.1: Command Router**
-    - [ ] Task: Refactor Main Loop to support `/command` parsing.
-    - [ ] Task: Create abstract `Tool` interface class.
-- [ ] **Milestone 2.2: The Code Auditor (Git)**
-    - [ ] Task: Implement `get_git_diff()` function.
-    - [ ] Task: Create `/review` command (Feed diff to Aria for a "roast").
-- [ ] **Milestone 2.3: Tech Radar (Web)**
-    - [ ] Task: Implement basic fetcher for Hacker News/GitHub Trending.
-    - [ ] Task: Create `/news` command for daily briefings.
+- [x] **Milestone 2.1: Command Router**
+    - [x] Task: Refactor Main Loop to support `/command` parsing.
+    - [x] Task: Create abstract `Tool` interface class.
+- [ ] **Milestone 2.2: Memory Persistence**
+    - [ ] Task: Implement `save_history()` and `load_history()` (JSON/DB).
+    - [ ] Task: Implement Context Window management (Last-N turns).
+    - [ ] **Challenge:** Ensure continuity of consciousness across system restarts.
 
 ### Phase 3: Cyber Symbiosis (Autonomy)
-*Granting Aria memory, agency, and vision.*
+*Granting Aria agency, and vision.*
 
 - [ ] **Milestone 3.1: Active Triggers**
     - [ ] Task: Implement Idle Detection (Trigger after 30m inactivity).
@@ -55,10 +53,6 @@
 - [ ] **Milestone 3.2: Visual Cortex**
     - [ ] Task: Integrate Vision Model (e.g., Qwen-VL).
     - [ ] Task: Create `/look` command to analyze screen content.
-- [ ] **Milestone 3.3: Memory Persistence**
-    - [ ] Task: Implement `save_history()` and `load_history()` (JSON/DB).
-    - [ ] Task: Implement Context Window management (Last-N turns).
-    - [ ] **Challenge:** Ensure continuity of consciousness across system restarts.
 
 ---
 
@@ -69,8 +63,10 @@
 | **v1.0** | Repeater effect; illogical dialogue.                         | Established JSONL structured data processing pipeline.       | ❌ Deprecated |
 | **v2.0** | **Narrative Hallucinations**: Frequent mentions of car crashes/exams. | Introduced `device_map` adaptation; attempted initial data cleaning. | ⚠️ Suspended  |
 | **v3.1** | **Overfitting**: 5 Epochs caused loss of logic.              | Reduced training intensity; reconsidered Rank weights.       | ⚠️ Suspended  |
-| **v3.2** | **Lucid State**: Balance point between nuance and logic.     | **Physical Blacklist Filtering + Ultra-low Rank (8)**.       | ✅ **Stable** |
-| **v4.0** | Upgrade from 3B to 7B based on v3.2.                         | Quantized 7B model for MacBook Air optimization.             | ✅ **Stable** |
+| **v3.2** | **Lucid State**: Balance point between nuance and logic.     | **Physical Blacklist Filtering + Ultra-low Rank (8)**.       | **Stable**   |
+| **v4.1** | Upgrade from 3B to 7B based on v3.2.                         | Quantized 7B model for MacBook Air optimization.             | **Stable**   |
+| **v4.2** | Intent recognition & tool execution                          | [Semantic Router + JIT Dynamic Injection + ReAct Architecture](../docs/Aria_v4.2_Architecture_EN.md) | ✅            |
+| **v4.3** | Long-term memory processing                                  | [Three-Tier Tiered Storage Architecture](../docs/Aria_v4.3_Memory_System_EN.md) | ✅            |
 
 ---
 
