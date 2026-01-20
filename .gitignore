@@ -31,8 +31,16 @@ models/
 *.pt
 *.gguf
 lora_weights/
+
 # --- 忽略 HuggingFace 缓存 ---
 .hf_cache*/
 
 # --- 忽略 LoRA 权重文件夹 ---
 AIGF-Aria-LoRA/
+
+# --- Ignore Local Models ---
+models/embedding_cache/
+models/*.safetensors
+models/*.bin
+__pycache__/
+*.pyc
