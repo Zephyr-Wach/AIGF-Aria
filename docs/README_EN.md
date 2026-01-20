@@ -63,10 +63,10 @@
 | **v1.0** | Repeater effect; illogical dialogue.                         | Established JSONL structured data processing pipeline.       | ❌ Deprecated |
 | **v2.0** | **Narrative Hallucinations**: Frequent mentions of car crashes/exams. | Introduced `device_map` adaptation; attempted initial data cleaning. | ⚠️ Suspended  |
 | **v3.1** | **Overfitting**: 5 Epochs caused loss of logic.              | Reduced training intensity; reconsidered Rank weights.       | ⚠️ Suspended  |
-| **v3.2** | **Lucid State**: Balance point between nuance and logic.     | **Physical Blacklist Filtering + Ultra-low Rank (8)**.       | ✅ **Stable** |
-| **v4.1** | Upgrade from 3B to 7B based on v3.2.                         | Quantized 7B model for MacBook Air optimization.             | ✅ **Stable** |
-| **v4.2** | Intent recognition & tool execution                          | [Semantic Router + JIT Dynamic Injection + ReAct Architecture](../docs/Aria_v4.2_Architecture_EN.md) | ✅ **Stable** |
-| **v4.3** | Long-term memory processing                                  | [Three-Tier Tiered Storage Architecture](../docs/Aria_v4.3_Memory_System_EN.md) |              |
+| **v3.2** | **Lucid State**: Balance point between nuance and logic.     | **Physical Blacklist Filtering + Ultra-low Rank (8)**.       | **Stable**   |
+| **v4.1** | Upgrade from 3B to 7B based on v3.2.                         | Quantized 7B model for MacBook Air optimization.             | **Stable**   |
+| **v4.2** | Intent recognition & tool execution                          | [Semantic Router + JIT Dynamic Injection + ReAct Architecture](../docs/Aria_v4.2_Architecture_EN.md) | ✅            |
+| **v4.3** | Long-term memory processing                                  | [Three-Tier Tiered Storage Architecture](../docs/Aria_v4.3_Memory_System_EN.md) | ✅            |
 
 ---
 

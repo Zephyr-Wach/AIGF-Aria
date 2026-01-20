@@ -1,4 +1,3 @@
-# extend/loader.py
 import sys
 import os
 

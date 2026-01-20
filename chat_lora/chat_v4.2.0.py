@@ -6,7 +6,6 @@ import os
 import sys
 import re
 
-# 环境设置
 sys.path.append(os.getcwd())
 from chat_lora.tools import HelpTool, ClearTool, StatsTool
 from extend.loader import load_extensions
@@ -42,7 +41,6 @@ def main():
 
     router = SemanticRouter(TOOLS_MANIFEST)
 
-    # 修改 Prompt：强调“隐蔽执行”
     PERSONA_PROMPT = """
 f"你是 Aria。你现在正和男友 {memory['user_name']} 待在一起。"
         "【性格】：随性、有点调皮、绝对理性但不死板。你喜欢用简单直接的方式表达。"
@@ -64,7 +62,6 @@ f"你是 Aria。你现在正和男友 {memory['user_name']} 待在一起。"
         if not query: continue
         if query in ['exit', 'quit']: break
 
-        # --- Phase 1: 语义反射层 ---
         system_hints = []
         active_tools_doc = []
         
@@ -80,19 +77,16 @@ f"你是 Aria。你现在正和男友 {memory['user_name']} 待在一起。"
                 doc = f"- {cmd} {matched_meta.get('usage','')}: {matched_meta['desc']}"
                 active_tools_doc.append(doc)
 
-        # --- Phase 2: 构建临时 Context ---
         jit_msg = ""
         if system_hints:
             jit_msg += "\n".join(system_hints) + "\n(根据数据直接回答，无需查询)\n"
         if active_tools_doc:
             jit_msg += "\n[临时授权工具]\n" + "\n".join(active_tools_doc)
-            # 极简指令提示
             jit_msg += "\n[协议] 立即执行，仅输出: >>> /指令 参数"
             
         final_query = f"{jit_msg}\n用户: {query}" if jit_msg else query
         messages.append({"role": "user", "content": final_query})
 
-        # --- Phase 3: ReAct 循环 ---
         for turn in range(3): 
             prompt = tokenizer.apply_chat_template(messages, add_generation_prompt=True)
             
@@ -104,21 +98,15 @@ f"你是 Aria。你现在正和男友 {memory['user_name']} 待在一起。"
                 response_text += part
             print("\n")
             
-            # --- 🔥 核心逻辑修复：历史重写 (History Rewriting) ---
-            # 如果检测到指令，不要把 Aria 那些废话存进去，只存纯净的指令。
-            
             match = re.search(r">>>\s+(/[a-zA-Z_]+)\s+([^\n。！？]+)", response_text)
             
             if match:
                 ai_cmd, ai_args = match.group(1).strip(), match.group(2).strip()
                 print(f"⚙️ [Action] {ai_cmd} '{ai_args}'")
                 
-                # 1. 伪造纯净记忆：假装 Aria 从来没说过废话，只输出了指令
-                # 这能有效防止她下一轮继续啰嗦
                 clean_response = f">>> {ai_cmd} {ai_args}"
                 messages.append({"role": "assistant", "content": clean_response})
                 
-                # 2. 执行工具
                 if ai_cmd in tool_registry:
                     res = tool_registry[ai_cmd].execute(ai_args, {'messages':messages})
                 else:
@@ -126,15 +114,12 @@ f"你是 Aria。你现在正和男友 {memory['user_name']} 待在一起。"
                 
                 print(f"   └── Result: {res}\n")
                 
-                # 3. 回传结果
                 messages.append({"role": "system", "content": f"[系统反馈] 任务完成: {res}"})
                 save_memory(messages)
                 
-                # 4. Continue 让 Aria 根据结果说一句人话 (这次她不会再发指令了)
                 continue 
             
             else:
-                # 如果没指令，正常保存
                 messages.append({"role": "assistant", "content": response_text})
                 save_memory(messages)
                 break 

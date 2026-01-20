@@ -1,4 +1,3 @@
-# chat_lora/tools.py
 from abc import ABC, abstractmethod
 import os
 
@@ -37,9 +36,8 @@ class NativeFunctionTool(AriaTool):
     def execute(self, args, context):
         try:
             if not args and self.func.__code__.co_argcount == 0: return str(self.func())
-            if self.name == '/remind': # 特殊处理
+            if self.name == '/remind': 
                 parts = args.rsplit(' ', 1)
-                # 兼容处理：如果最后一部分是数字，则分离；否则全部当内容
                 if len(parts) > 1 and parts[1].replace('.','',1).isdigit():
                     return str(self.func(parts[0], float(parts[1])))
                 return str(self.func(args))
