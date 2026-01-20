@@ -6,36 +6,28 @@
 TOOLS_MANIFEST = {
     "get_now": {
         "cmd": "/time",
-        "desc": "查询当前时间",
-        "keywords": ["几点", "时间", "日期", "time", "date", "clock"],
+        "desc": "查询当前精确时间",
+        "keywords": ["几点", "时间", "日期", "clock"],
         "type": "reflex" 
     },
     "get_sys_status": {
         "cmd": "/status",
         "desc": "查看系统状态(CPU/内存/电量)",
-        "keywords": ["卡不卡", "cpu", "内存", "电量", "battery", "status"],
+        "keywords": ["卡不卡", "cpu", "内存", "电量", "status"],
         "type": "reflex"
     },
     "set_reminder": {
         "cmd": "/remind",
-        "desc": "添加倒计时或延时提醒任务",
+        "desc": "添加倒计时提醒 (Reminders.app)",
         "usage": "/remind 内容 [分钟数]",
-        # ⚡️ 重点：增加时间偏移量关键词，接管相对时间意图
-        "keywords": ["提醒", "记一下", "remind", "后", "分钟", "小时", "等会", "待会", "min", "hour"],
+        "keywords": ["提醒", "后", "分钟", "小时"],
         "type": "skill"
     },
     "set_alarm": {
         "cmd": "/alarm",
-        "desc": "设定具体的绝对时间闹钟",
+        "desc": "设定响铃闹钟 (Clock.app)",
         "usage": "/alarm HH:MM",
-        "keywords": ["闹钟", "叫我", "alarm", "wake", "早起", "睡觉"],
-        "type": "skill"
-    },
-    "complete_task": {
-        "cmd": "/done",
-        "desc": "标记任务完成",
-        "usage": "/done 关键词",
-        "keywords": ["做完了", "完成", "搞定", "done", "finish", "已办"],
+        "keywords": ["闹钟", "叫我", "起床", "唤醒"],
         "type": "skill"
     }
 }
