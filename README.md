@@ -39,10 +39,10 @@
 - [x] **Milestone 2.1: 指令路由器**
     - [x] Task: 重构主循环以支持 `/command` 指令解析。
     - [x] Task: 创建抽象 `Tool` 接口类。
-- [ ] **Milestone 2.2: 记忆持久化**
-    - [ ] Task: 实现 `save_history()` 和 `load_history()` (JSON/DB)。
-    - [ ] Task: 实现上下文窗口管理 (保留最近 N 轮)。
-    - [ ] **Challenge:** 实现系统重启后的意识连续性。
+- [x] **Milestone 2.2: 记忆持久化**
+    - [x] Task: 实现 `save_history()` 和 `load_history()` (JSON/DB)。
+    - [x] Task: 实现上下文窗口管理 (保留最近 N 轮)。
+    - [x] **Challenge:** 实现系统重启后的意识连续性。
 
 ### Phase 3: 赛博共生 (Autonomy)
 *赋予 Aria 主动性与视觉能力。*

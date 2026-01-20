@@ -39,10 +39,10 @@
 - [x] **Milestone 2.1: Command Router**
     - [x] Task: Refactor Main Loop to support `/command` parsing.
     - [x] Task: Create abstract `Tool` interface class.
-- [ ] **Milestone 2.2: Memory Persistence**
-    - [ ] Task: Implement `save_history()` and `load_history()` (JSON/DB).
-    - [ ] Task: Implement Context Window management (Last-N turns).
-    - [ ] **Challenge:** Ensure continuity of consciousness across system restarts.
+- [x] **Milestone 2.2: Memory Persistence**
+    - [x] Task: Implement `save_history()` and `load_history()` (JSON/DB).
+    - [x] Task: Implement Context Window management (Last-N turns).
+    - [x] **Challenge:** Ensure continuity of consciousness across system restarts.
 
 ### Phase 3: Cyber Symbiosis (Autonomy)
 *Granting Aria agency, and vision.*
