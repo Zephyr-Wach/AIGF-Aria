@@ -1,0 +1,35 @@
+# --- 隐私数据 (Privacy) ---
+DataSet/*.txt
+DataSet/*.csv
+DataSet/*.json
+data/*.jsonl
+*.log
+aria_memory.json
+history.json
+/PreVersion/*
+
+# --- 系统垃圾 (OS) ---
+.DS_Store
+**/.DS_Store
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv
+env/
+venv/
+
+# --- 大文件/模型权重 (Large Files) ---
+models/
+*.bin
+*.safetensors
+*.pt
+*.gguf
+lora_weights/
+# --- 忽略 HuggingFace 缓存 ---
+.hf_cache*/
+
+# --- 忽略 LoRA 权重文件夹 ---
+AIGF-Aria-LoRA/
