@@ -26,13 +26,25 @@ def set_reminder(content, delay_minutes=0):
         except:
             delay = 0
 
-        remind_time = (datetime.datetime.now() + datetime.timedelta(minutes=delay)).strftime("%Y-%m-%d %H:%M:%S")
+        t = datetime.datetime.now() + datetime.timedelta(minutes=delay)
         
-        script = f'tell application "Reminders" to make new reminder with properties {{name:"{content}", body:"Aria", remind me date:date "{remind_time}"}}'
+        # 🍎 终极方案：直接构造 AppleScript 属性，避免字符串解析错误
+        script = f'''
+        tell application "Reminders"
+            set targetDate to current date
+            set day of targetDate to {t.day}
+            set month of targetDate to {t.month}
+            set year of targetDate to {t.year}
+            set hours of targetDate to {t.hour}
+            set minutes of targetDate to {t.minute}
+            set seconds of targetDate to {t.second}
+            
+            make new reminder with properties {{name:"{content}", body:"Aria 提醒", remind me date:targetDate}}
+        end tell
+        '''
         
-        # 🔥 修改点：capture_output=True, text=True
         subprocess.run(["osascript", "-e", script], capture_output=True, text=True)
-        return f"✅ Remind set: {content} at {remind_time}"
+        return f"✅ 已设定: {content} (于 {t.strftime('%Y-%m-%d %H:%M:%S')})"
     except Exception as e: return f"Error: {e}"
 
 def set_alarm(time_str):
@@ -42,14 +54,24 @@ def set_alarm(time_str):
         target = datetime.datetime.strptime(clean_time, "%H:%M").replace(year=now.year, month=now.month, day=now.day)
         
         if target < now: target += datetime.timedelta(days=1)
-        fmt = target.strftime("%Y-%m-%d %H:%M:%S")
         
-        script = f'tell application "Reminders" to make new reminder with properties {{name:"⏰ Alarm: {clean_time}", remind me date:date "{fmt}", priority:1}}'
+        # 🍎 同样使用属性构造法
+        script = f'''
+        tell application "Reminders"
+            set targetDate to current date
+            set day of targetDate to {target.day}
+            set month of targetDate to {target.month}
+            set year of targetDate to {target.year}
+            set hours of targetDate to {target.hour}
+            set minutes of targetDate to {target.minute}
+            set seconds of targetDate to 0
+            
+            make new reminder with properties {{name:"⏰ 闹钟: {clean_time}", remind me date:targetDate, priority:1}}
+        end tell
+        '''
         
-        # 🔥 修改点：capture_output=True, text=True
         subprocess.run(["osascript", "-e", script], capture_output=True, text=True)
-        
-        return f"⏰ Alarm set for {fmt}"
+        return f"⏰ 闹钟设定成功: {target.strftime('%Y-%m-%d %H:%M:%S')}"
     except Exception as e: 
         return f"Usage: HH:MM (Error: {e})"
 
