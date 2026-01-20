@@ -34,7 +34,7 @@
     - [x] Task: Define basic System Prompt structure.
 
 ### Phase 2: Sensory Extension (The Tools)
-*Connecting Aria to the local filesystem and workflow.*
+*Connecting Aria to the local filesystem and workflow, and memory.*
 
 - [x] **Milestone 2.1: Command Router**
     - [x] Task: Refactor Main Loop to support `/command` parsing.
@@ -45,7 +45,7 @@
     - [ ] **Challenge:** Ensure continuity of consciousness across system restarts.
 
 ### Phase 3: Cyber Symbiosis (Autonomy)
-*Granting Aria memory, agency, and vision.*
+*Granting Aria agency, and vision.*
 
 - [ ] **Milestone 3.1: Active Triggers**
     - [ ] Task: Implement Idle Detection (Trigger after 30m inactivity).

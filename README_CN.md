@@ -34,7 +34,7 @@
     - [x] Task: 定义基础 System Prompt 结构。
 
 ### Phase 2: 感官延伸 (The Tools)
-*将 Aria 连接至本地文件系统与工作流。*
+*将 Aria 连接至本地文件系统与工作流、长期记忆。*
 
 - [x] **Milestone 2.1: 指令路由器**
     - [x] Task: 重构主循环以支持 `/command` 指令解析。
@@ -45,7 +45,7 @@
     - [ ] **Challenge:** 实现系统重启后的意识连续性。
 
 ### Phase 3: 赛博共生 (Autonomy)
-*赋予 Aria 记忆、主动性与视觉能力。*
+*赋予 Aria 主动性与视觉能力。*
 
 - [ ] **Milestone 3.1: 主动触发器**
     - [ ] Task: 实现空闲检测 (无操作 30 分钟后触发)。
